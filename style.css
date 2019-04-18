@@ -1,10 +1,24 @@
 body {
+  min-width: 320px;
   margin: 40px 32px;
 
   font-size: 28px;
   line-height: normal;
   font-family: 'Amatic SC', cursive;
   font-weight: 700;
+
+  background-image: url("img/pattern.png");
+  background-repeat: repeat;
+}
+
+.container {
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 4% 5%;
+
+  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(161, 181, 196, 0.8), 0 10px 10px rgba(161, 181, 196, 0.7);
 }
 
 .visually-hidden,
@@ -29,6 +43,13 @@ body {
   display: none;
 }
 
+.todo-list-title {
+  margin: 0 0 15px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #e3cd71;
+}
+
 .todo-list {
   margin: 0;
   padding: 0;
@@ -37,7 +58,7 @@ body {
 }
 
 .todo-list-item {
-  margin-bottom: 12px;
+  margin-bottom: 17px;
 }
 
 .todo-list-item label {
@@ -56,6 +77,8 @@ body {
 .todo-list-item span {
   display: flex;
   align-items: center;
+
+  text-transform: capitalize;
 }
 
 .todo-list-input + span::before {
@@ -69,12 +92,12 @@ body {
   margin-right: 16px;
 
   background-color: #ffffff;
-  border: 2px solid #69b253;
+  border: 2px solid #7ec8bb;
   border-radius: 4px;
 }
 
 .todo-list-input:checked + span::before {
-  background-color: #69b253;
+  background-color: #7ec8bb;
   background-image: url("img/check-white.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -82,11 +105,11 @@ body {
 
 .todo-list-input:not(:checked):hover + span::before,
 .todo-list-input:not(:checked):focus + span::before {
-  background-color: rgba(105, 178, 83, 0.2);
+  background-color: rgba(126, 200, 187, 0.2);
 }
 
 .empty-tasks {
-  color: #69b253;
+  color: #7ec8bb;
 }
 
 .empty-tasks::before {
@@ -104,6 +127,7 @@ body {
 
 .add-form {
   display: flex;
+  align-items: center;
 }
 
 .add-form-input {
@@ -116,17 +140,18 @@ body {
 
   font: inherit;
 
+
   border: 1px solid #a1b5c4;
   border-radius: 4px;
 }
 
 .add-form-input:focus {
-  border: 1px solid #69b253;
+  border: 1px solid #7ec8bb;
   outline: none;
 }
 
 .add-form-input:hover {
-  box-shadow: 0 0 6px rgba(105, 178, 83, 0.6);
+  box-shadow: 0 0 6px rgba(126, 200, 187, 0.6);
 }
 
 .add-form-input::placeholder {
@@ -140,7 +165,7 @@ body {
   font: inherit;
   color: #ffffff;
 
-  background-color: #69b253;
+  background-color: #7ec8bb;
   border: none;
   border-radius: 4px;
 
@@ -150,10 +175,31 @@ body {
 
 .add-form-button:hover,
 .add-form-button:focus {
-  background-color: #5aa045;
+  background-color: #2CA392;
   outline: none;
 }
 
 .add-form-button:active {
-  background-color: #42862e;
+  background-color: #0E6A5D;
+}
+
+@media (max-width: 640px) {
+  .add-form {
+    display: block;
+  }
+
+  .add-form-input {
+    width: 100%;
+  }
+
+  .add-form-button {
+    display: block;
+    margin: 20px auto 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 25px;
+  }
 }

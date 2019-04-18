@@ -17,11 +17,10 @@ var toggleEmptyListMessage = function () {
 var addCheckHandler = function (item) {
   var checkbox = item.querySelector('.todo-list-input');
   checkbox.addEventListener('change', function () {
-    setTimeout(function(){
+    var timer = setTimeout(function(){
       item.remove();
+      toggleEmptyListMessage();
     }, 400);
-
-    toggleEmptyListMessage();
   });
 };
 
